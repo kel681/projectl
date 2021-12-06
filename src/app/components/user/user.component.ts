@@ -10,23 +10,23 @@ import { AccountService } from '../../services/account.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
   userSubscription: Subscription = null;
-  currentUser: User = null;
+  currentUser: User = { id: '1', username: 'hello' }
 
   userForm = new FormGroup({
-    user: new FormControl(),
+    username: new FormControl(),
     password: new FormControl()
   });
 
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
-    this.userSubscription = this.accountService.user.subscribe(user => this.currentUser = user);
+    //this.userSubscription = this.accountService.user.subscribe(user => this.currentUser = user);
   }
 
   login(): void {
-    const user = this.userForm.get('user').value;
+    console.log(this.userForm)
+    const user = this.userForm.get('username').value;
     const password = this.userForm.get('password').value;
     if (!user || !password) {
       console.error('user or password are empty')
