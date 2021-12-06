@@ -20,7 +20,7 @@ export class PostsComponent implements OnInit {
   }
 
   refreshPost(): void {
-    this.postSubscription = this.postService.getPosts().subscribe({
+    this.postSubscription = this.postService.mockPost().subscribe({
       next: (data) => {
         this.posts = data;
       },
