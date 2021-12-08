@@ -1,0 +1,7 @@
+<div class="bg-gray-200 w-screen max-h-screen grid-cols-3 grid gap-4 mb-6 overflow-scroll">
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    <button (click)="addPost()"
+        class="absolute bottom-0 right-4 p-0 w-12 h-12 bg-gray-600 rounded-full hover:bg-gray-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+        <fa-icon class="w-6 h-6 inline-block text-gray-400" [icon]="faPlus"></fa-icon>
+    </button>
+</div>

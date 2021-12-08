@@ -1,0 +1,53 @@
+<div class="ml-3 relative">
+    <div *ngIf="currentUser"
+        class="origin-top-right absolute right-0 mt-2 bg-white rounded-lg border border-gray-200 w-48 text-gray-900 text-sm font-medium dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        <button disabled aria-current="true" type="button"
+            class="text-left px-4 py-2 border-b border-gray-200 w-full rounded-t-lg  hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer dark:border-gray-600 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+            Profile
+        </button>
+        <button disabled type="button"
+            class="text-left px-4 py-2 border-b border-gray-200 w-full hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer dark:border-gray-600 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+            Settings
+        </button>
+        <button disabled type="button"
+            class="text-left px-4 py-2 border-b border-gray-200 w-full hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer dark:border-gray-600 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+            Messages
+        </button>
+        <button type="button" (click)="logout()"
+            class="text-left px-4 py-2 border-b  w-full rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer dark:border-gray-600 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+            Sign out
+        </button>
+    </div>
+    <div *ngIf="!currentUser">
+        <div class="w-full max-w-xs">
+            <form [formGroup]="userForm" (ngSubmit)="login()" class="px-4 pt-2 pb-2">
+                <div class="mb-3">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Username
+                    </label>
+                    <input formControlName="username"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="username" type="text" placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input formControlName="password"
+                        class="shadow appearance-none border rounded w-full pt-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        id="password" type="password" placeholder="*********">
+                </div>
+                <div class="flex flex-col items-center">
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full p-2 mb-1 rounded focus:outline-none focus:shadow-outline"
+                        type="submit">
+                        Sign In
+                    </button>
+                    <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                        Forgot Password?
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

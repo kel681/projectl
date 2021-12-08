@@ -1,0 +1,13 @@
+{
+    "name": "projectl",
+    "version": "0.0.0",
+    "scripts": {
+        "start-angular": "cd angular && npm run start",
+        "start-server": "ng serve",
+        "build-angular": "cd angular && ng build",
+        "build-server": "cd server && npm run build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test"
+    },
+    "private": true
+}
